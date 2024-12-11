@@ -1,0 +1,41 @@
+/* Formato del botón para agregar al carrito */
+.agregar-al-carrito {
+    background-color: $color-principal;
+    color: $color-texto;
+    border: none;
+    border-radius: $radio-borde;
+    padding: 10px 20px; /* Ajusta el padding para un tamaño de botón más compacto */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color $transicion-duracion, transform $transicion-duracion;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    gap: 10px;
+    border: black 1px solid;
+    &:hover {
+        background-color: $color-hover;
+        color: $color-texto-hover;
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba($color-principal, 0.5);
+    }
+    @media (max-width: 600px) {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+  .icono-carrito {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    fill: white;
+}
