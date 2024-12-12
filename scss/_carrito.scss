@@ -1,0 +1,87 @@
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  button.accion {
+    background-color: $color-accion;
+    color: white;
+    &:hover {
+      background-color: $color-accion-hover;
+    }
+    &:active {
+      background-color: $color-accion-active;
+    }
+  }
+  button.sumar-cantidad{
+    background-color: $color-eliminar;
+    color: white;
+    &:hover {
+      background-color: $color-eliminar-hover;
+    }
+    &:active {
+      background-color: $color-eliminar-active;
+    }
+  }
+  button.eliminar {
+    background-color: $color-eliminar;
+    color: white;
+    &:hover {
+      background-color: $color-eliminar-hover;
+    }
+    &:active {
+      background-color: $color-eliminar-active;
+    }
+  }
+  button.eliminar-todo {
+    background-color: $color-eliminar;
+    color: white;
+    &:hover {
+      background-color: $color-eliminar-hover;
+    }
+    &:active {
+      background-color: $color-eliminar-active;
+    }
+  }
+  button.vaciar-carrito {
+    background-color: $color-vaciar;
+    color: white;
+    &:hover {
+      background-color: $color-vaciar-hover;
+    }
+    &:active {
+      background-color: $color-vaciar-active;
+    }
+  }
+  .producto-en-carrito {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+  }
+  .producto-en-carrito h3 {
+    color: $textCarrito;
+    margin: 0;
+    font-size: 18px;
+  }
+  .producto-en-carrito span {
+    color: $textCarrito;
+    display: block;
+    margin: 5px 0;
+  }
+  .total-carrito {
+    background-color: $textCarrito;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }

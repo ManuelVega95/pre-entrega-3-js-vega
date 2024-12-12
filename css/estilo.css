@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Colores principales a utilizar */
 /* Colores para el botón de los productos */
+/* Colores para la sección del carrito */
 /* Reiniciar el formato antes de arrancar*/
 * {
   margin: 0;
@@ -1041,6 +1042,103 @@ footer .navFooter li a:hover {
   height: 18px;
   object-fit: contain;
   fill: white;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+button.accion {
+  background-color: #4CAF50;
+  color: white;
+}
+button.accion:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+button.accion:active {
+  background-color: rgb(45.1155378486, 103.8844621514, 47.4900398406);
+}
+
+button.sumar-cantidad {
+  background-color: #FF6347;
+  color: white;
+}
+button.sumar-cantidad:hover {
+  background-color: rgb(255, 55.7608695652, 20);
+}
+button.sumar-cantidad:active {
+  background-color: rgb(224, 34.0869565217, 0);
+}
+
+button.eliminar {
+  background-color: #FF6347;
+  color: white;
+}
+button.eliminar:hover {
+  background-color: rgb(255, 55.7608695652, 20);
+}
+button.eliminar:active {
+  background-color: rgb(224, 34.0869565217, 0);
+}
+
+button.eliminar-todo {
+  background-color: #FF6347;
+  color: white;
+}
+button.eliminar-todo:hover {
+  background-color: rgb(255, 55.7608695652, 20);
+}
+button.eliminar-todo:active {
+  background-color: rgb(224, 34.0869565217, 0);
+}
+
+button.vaciar-carrito {
+  background-color: #DC143C;
+  color: white;
+}
+button.vaciar-carrito:hover {
+  background-color: rgb(173.25, 15.75, 47.25);
+}
+button.vaciar-carrito:active {
+  background-color: rgb(126.5, 11.5, 34.5);
+}
+
+.producto-en-carrito {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.producto-en-carrito h3 {
+  color: rgb(5, 5, 57);
+  margin: 0;
+  font-size: 18px;
+}
+
+.producto-en-carrito span {
+  color: rgb(5, 5, 57);
+  display: block;
+  margin: 5px 0;
+}
+
+.total-carrito {
+  background-color: rgb(5, 5, 57);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=estilo.css.map */

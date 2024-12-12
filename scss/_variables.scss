@@ -21,3 +21,19 @@ $color-texto: #0e0433;
 $color-texto-hover: #220c74;
 $radio-borde: 30px;
 $transicion-duracion: 0.3s;
+
+/* Colores para la sección del carrito */
+
+$color-accion: #4CAF50; 
+$color-accion-hover: darken($color-accion, 10%);
+$color-accion-active: darken($color-accion, 20%);
+
+$color-eliminar: #FF6347;
+$color-eliminar-hover: darken($color-eliminar, 10%);
+$color-eliminar-active: darken($color-eliminar, 20%); 
+
+$color-vaciar: #DC143C;
+$color-vaciar-hover: darken($color-vaciar, 10%);
+$color-vaciar-active: darken($color-vaciar, 20%);
+
+$textCarrito: rgb(5, 5, 57);

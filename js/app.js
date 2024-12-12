@@ -9,7 +9,10 @@ const productos = [
     new Producto(5, "Pelota Rugby URBA 2024", "Pelota oficial para partidos de rugby URBA 2024.", 105000, "../fotos/URBA pelota.jpg"),
     new Producto(6, "Botines Rugby Originales", "Botines de rugby originales, ideales para todo tipo de terreno.", 180000, "../fotos/Botines rugby adidas negros.jpg"),
     new Producto(7, "Botines Rugby Celestes", "Botines de rugby celestes, cómodos y duraderos.", 110000, "../fotos/Botines rugby celestes.jpg"),
-    new Producto(8, "Protector Bucal Gilbert", "Protección para tu boca durante los partidos.", 29000, "../fotos/Protector bucal Gilbert.png")
+    new Producto(8, "Protector Bucal Gilbert", "Protección para tu boca durante los partidos.", 29000, "../fotos/Protector bucal Gilbert.png"),
+    new Producto(9, "Medias Titulares de Los Pumas", "Medias titulares del seleccionado argentino de rugby", 12900, "../fotos/medias-pumas-2024.jpg"),
+    new Producto(10, "Medias Alternativas Rugby", "Medias alternativas del seleccionado argentino de rugby", 13900, "../fotos/medias-pumas-2024-alternativa.jpg"),
+    new Producto(11, "Tee Para Rugby Gilbert", "El mejor tee para tener una mayor precisión", 34900, "../fotos/Tee-rugby.png"),
   ];
 
 const mostrarProductos = () => { // este es el código utilizado para las cards en el Index, pero para utilizar en JS
@@ -67,7 +70,6 @@ productos.forEach(producto => {
   });
 
 mostrarProductos();
-
 
 window.onload = () => {
     mostrarProductos();

@@ -17,8 +17,9 @@ export const agregarAlCarrito = (idProducto, productos) => {
     }
 
     localStorage.setItem("carrito", JSON.stringify(carritoStorage));
-    console.log('Se agregó al carrito el producto:', productoSeleccionado.nombre);
+    console.log('Se agregó al carrito el producto:', productoSeleccionado.nombre, ', precio: $', productoSeleccionado.precio);
     mostrarCarrito();
+    console.log("Carrito actualizado:", carritoStorage);
   } else {
     console.log("Producto no encontrado");
   }
@@ -40,11 +41,12 @@ export const mostrarCarrito = () => {
       const cardHTML = `
         <div class="producto-en-carrito" id="producto-${producto.id}">
           <h3>${producto.nombre}</h3>
-          <span>Precio: $${producto.precio.toLocaleString('es-AR')}</span>
-          <span>Cantidad: ${producto.cantidad}</span>
-          <span>Total producto: $${precioTotalProducto.toLocaleString('es-AR')}</span>
-          <button class="sumar-cantidad" data-id="${producto.id}">Sumar cantidad</button>
-          <button class="eliminar" data-id="${producto.id}">Eliminar</button>
+          <span>PRECIO: $${producto.precio.toLocaleString('es-AR')}</span>
+          <span>CANTIDAD: ${producto.cantidad}</span>
+          <span class = "bold"> TOTAL PRODUCTO: $${precioTotalProducto.toLocaleString('es-AR')}</span>
+          <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+          <button class="eliminar" data-id="${producto.id}">-</button>
+          <button class="eliminar-todo" data-id="${producto.id}">Eliminar todos estos productos</button> 
         </div>
       `;
       contenedorCarrito.innerHTML += cardHTML;
@@ -56,6 +58,8 @@ export const mostrarCarrito = () => {
       </div>
     `;
     contenedorCarrito.innerHTML += totalHTML;
+
+    crearBotonVaciarCarrito();
 
     console.log(`Total del carrito actualizado: $${total.toLocaleString('es-AR')}`);
 
@@ -74,10 +78,32 @@ export const mostrarCarrito = () => {
         eliminarDelCarrito(idProducto);
       });
     });
+
+    const botonesEliminarTodo = document.querySelectorAll(".eliminar-todo");
+    botonesEliminarTodo.forEach(boton => {
+      boton.addEventListener("click", (e) => {
+        const idProducto = parseInt(e.target.getAttribute("data-id"));
+        eliminarTodoDelCarrito(idProducto);
+      });
+    });
+
+    const botonVaciarCarrito = document.querySelector(".vaciar-carrito");
+    if (botonVaciarCarrito) {
+      botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+    }
+
   } else {
     contenedorCarrito.innerHTML = "<p>El carrito está vacío</p>";
     console.log("El carrito está vacío.");
   }
+};
+
+const crearBotonVaciarCarrito = () => {
+  const contenedorCarrito = document.getElementById("carrito");
+  const botonVaciarHTML = `
+    <button class="vaciar-carrito">Vaciar todo el carrito</button>
+  `;
+  contenedorCarrito.innerHTML += botonVaciarHTML;
 };
 
 const sumarCantidad = (idProducto) => {
@@ -111,6 +137,26 @@ const eliminarDelCarrito = (id) => {
     localStorage.setItem("carrito", JSON.stringify(carritoStorage));
     mostrarCarrito();
   }
+};
+
+const eliminarTodoDelCarrito = (idProducto) => {
+  let carritoStorage = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  carritoStorage = carritoStorage.filter(producto => producto.id !== idProducto);
+  
+  localStorage.setItem("carrito", JSON.stringify(carritoStorage));
+  console.log(`Se eliminaron todos los productos con el id "${idProducto}" del carrito`);
+
+  mostrarCarrito();
+  console.log("Carrito actualizado:", carritoStorage);
+};
+
+const vaciarCarrito = () => {
+  localStorage.removeItem("carrito");
+
+  console.log("Se eliminaron todos los productos del carrito");
+
+  mostrarCarrito();
 };
 
 window.onload = () => mostrarCarrito();
